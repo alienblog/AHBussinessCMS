@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="AH.Business.Models" namespace="AH.Business.Models">
+  <class name="ContentProperty" table="ah_content_property">
+    <id name="Id">
+      <generator class="native"/>
+    </id>
+    <property name="PropertyKey"/>
+    <property name="PropertyValue">
+      <column name="PropertyValue" sql-type="text"/>
+    </property>
+    <many-to-one name="Content" class="Content"/>
+  </class>
+</hibernate-mapping>

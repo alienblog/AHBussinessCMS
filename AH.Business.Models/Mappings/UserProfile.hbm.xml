@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="AH.Business.Models" namespace="AH.Business.Models">
+  <class name="UserProfile" table="ah_user_profile">
+    <id name="Id">
+      <generator class="native"/>
+    </id>
+    <property name="profileKey"/>
+    <property name="profileValue">
+      <column name="profileValue" sql-type="text"/>
+    </property>
+    <many-to-one class="User" name="User"/>
+  </class>
+</hibernate-mapping>

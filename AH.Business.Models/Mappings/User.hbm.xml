@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="AH.Business.Models" namespace="AH.Business.Models">
+  <class name="User" table="ah_user">
+    <id name="Id">
+      <generator class="native" />
+    </id>
+    <property name="Name"/>
+    <property name="Password"/>
+    <property name="Email"/>
+    <property name="Comment">
+      <column name="Comment" sql-type="text"/>
+    </property>
+    <property name="CreateDate"/>
+    <property name="IsAdministrator"/>
+    <bag name="Contents">
+      <key column="Id"></key>
+      <one-to-many class="Content"/>
+    </bag>
+    <bag name="Profiles">
+      <key column="Id"></key>
+      <one-to-many class="UserProfile"/>
+    </bag>
+  </class>
+</hibernate-mapping>
